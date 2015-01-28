@@ -1,6 +1,6 @@
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="015"; fi
 
-PROMPT='$FG[015]$(git_prompt_info)$(git_prompt_status)%{$reset_color%} '
+PROMPT='$FG[015]$(git_prompt_info)$(git_prompt_status)$(symfony_env_prompt)%{$reset_color%} '
 RPROMPT='$FG[237]%~%{$reset_color%}'
 LSCOLORS=ExFxCxDxBxegedabagacad
 
