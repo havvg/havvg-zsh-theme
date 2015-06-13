@@ -1,3 +1,4 @@
+: ${home_icon:=''} # 
 
 : ${omg_is_a_git_repo_symbol:=''} # 
 
@@ -169,7 +170,11 @@ function custom_build_rprompt() {
         fi
     fi
 
-    rprompt+="${grey}%2~"
+    if [[ -n "${home_icon}" && "$HOME" == $(pwd) ]]; then
+        rprompt+="${white}${home_icon}"
+    else
+        rprompt+="${grey}%2~"
+    fi
 
     if [[ true == ${is_a_git_repo} ]]; then
         if [ -n "${omg_is_a_git_repo_symbol}" ]; then
